@@ -1,0 +1,526 @@
+2023-02-09 16:46:13 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.17 on Franks-MacBook-Air.local with PID 53468 (/Users/frankyiu/Documents/projects/javaworkspace/microservices-demo/twitter-to-kafka-service/target/classes started by frankyiu in /Users/frankyiu/Documents/projects/javaworkspace/microservices-demo)
+2023-02-09 16:46:13 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "dev"
+2023-02-09 16:46:13 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-02-09 16:46:13 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter_to_kafka, profiles=[dev], label=null, version=31ca64299b4b01474b6b5dbb4f2400bf917fc344, state=null
+2023-02-09 16:46:14 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=dfe7dfc5-d7b2-388f-ba9a-454c24c3b0a5
+2023-02-09 16:46:14 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-02-09 16:46:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-02-09 16:46:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-02-09 16:46:14 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1675979174959
+2023-02-09 16:46:15 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
+2023-02-09 16:46:15 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 3.781 seconds (JVM running for 4.547)
+2023-02-09 16:46:15 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App Starts...
+2023-02-09 16:46:15 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics attempt 0
+2023-02-09 16:46:15 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic] attempt 0
+2023-02-09 16:46:17 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with names (name=twitter-topic, topicId=AAAAAAAAAAAAAAAAAAAAAA, internal=false)
+2023-02-09 16:46:17 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with names (name=_schemas, topicId=AAAAAAAAAAAAAAAAAAAAAA, internal=false)
+2023-02-09 16:46:17 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with names (name=__confluent.support.metrics, topicId=AAAAAAAAAAAAAAAAAAAAAA, internal=false)
+2023-02-09 16:46:17 [main] ERROR i.n.r.d.DnsServerAddressStreamProviders - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2023-02-09 16:46:19 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Topic with name twitter-topic ready
+2023-02-09 16:46:19 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Create filter for twitter stream for keywords: [Java, Microservices, Spring]
+2023-02-09 16:46:28 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2023-02-09 16:46:29 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-02-09 16:46:29 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-02-09 16:46:29 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-02-09 16:46:29 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-02-09 16:46:29 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer
+2023-02-09 16:46:48 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 11.0.17 on Franks-MacBook-Air.local with PID 53552 (/Users/frankyiu/Documents/projects/javaworkspace/microservices-demo/twitter-to-kafka-service/target/classes started by frankyiu in /Users/frankyiu/Documents/projects/javaworkspace/microservices-demo)
+2023-02-09 16:46:48 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - The following 1 profile is active: "dev"
+2023-02-09 16:46:48 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://localhost:8888
+2023-02-09 16:46:48 [main] INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=twitter_to_kafka, profiles=[dev], label=null, version=31ca64299b4b01474b6b5dbb4f2400bf917fc344, state=null
+2023-02-09 16:46:48 [main] INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=dfe7dfc5-d7b2-388f-ba9a-454c24c3b0a5
+2023-02-09 16:46:49 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2023-02-09 16:46:49 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-02-09 16:46:49 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-02-09 16:46:49 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1675979209170
+2023-02-09 16:46:49 [main] INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080
+2023-02-09 16:46:49 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 2.831 seconds (JVM running for 3.464)
+2023-02-09 16:46:49 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - App Starts...
+2023-02-09 16:46:49 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Creating 1 topics attempt 0
+2023-02-09 16:46:49 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Reading kafka topic [twitter-topic] attempt 0
+2023-02-09 16:46:49 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with names (name=twitter-topic, topicId=AAAAAAAAAAAAAAAAAAAAAA, internal=false)
+2023-02-09 16:46:49 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with names (name=_schemas, topicId=AAAAAAAAAAAAAAAAAAAAAA, internal=false)
+2023-02-09 16:46:49 [main] INFO  c.m.d.k.a.client.KafkaAdminClient - Topic with names (name=__confluent.support.metrics, topicId=AAAAAAAAAAAAAAAAAAAAAA, internal=false)
+2023-02-09 16:46:50 [main] ERROR i.n.r.d.DnsServerAddressStreamProviders - Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2023-02-09 16:46:50 [main] INFO  c.m.d.t.t.k.s.TwitterToKafkaServiceApplication - Topic with name twitter-topic ready
+2023-02-09 16:46:50 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterV2KafkaStreamRunner - Create filter for twitter stream for keywords: [Java, Microservices, Spring]
+2023-02-09 16:46:59 [main] INFO  c.m.d.t.t.k.s.r.i.TwitterV2StreamHelper - Created rules for twitter stream Java
+2023-02-09 16:47:12 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @papimuluba Finds romantisch 😍 sending to kafka topic
+2023-02-09 16:47:12 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 3157611635, "id": 1623800658573893638, "text": "@papimuluba Finds romantisch 😍", "createdAt": 1675979220000} to topic twitter-topic
+2023-02-09 16:47:12 [main] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 1638400
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 60000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+
+2023-02-09 16:47:12 [main] INFO  i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	auto.register.schemas = true
+	avro.reflection.allow.null = false
+	avro.remove.java.properties = false
+	avro.use.logical.type.converters = false
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.cache.expiry.buffer.seconds = 300
+	bearer.auth.client.id = null
+	bearer.auth.client.secret = null
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.identity.pool.id = null
+	bearer.auth.issuer.endpoint.url = null
+	bearer.auth.logical.cluster = null
+	bearer.auth.scope = null
+	bearer.auth.scope.claim.name = scope
+	bearer.auth.sub.claim.name = sub
+	bearer.auth.token = [hidden]
+	context.name.strategy = class io.confluent.kafka.serializers.context.NullContextNameStrategy
+	id.compatibility.strict = true
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	latest.compatibility.strict = true
+	max.schemas.per.subject = 1000
+	normalize.schemas = false
+	proxy.host = 
+	proxy.port = -1
+	schema.format = null
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.certificate.chain = null
+	schema.registry.ssl.keystore.key = null
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.certificates = null
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://localhost:8081]
+	use.latest.version = false
+	use.schema.id = -1
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+2023-02-09 16:47:12 [main] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2023-02-09 16:47:12 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-02-09 16:47:12 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-02-09 16:47:12 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1675979232508
+2023-02-09 16:47:12 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: Yk7TurdATWyZwPkAsbF6og
+2023-02-09 16:47:12 [kafka-producer-network-thread | producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-1] ProducerId set to 2001 with epoch 0
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @themanliest1: My girl told me my penis was small and I decided to fix the issue by pulling up to my local apple tree and making a hole… sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1030910016860119043, "id": 1623800660025122818, "text": "RT @themanliest1: My girl told me my penis was small and I decided to fix the issue by pulling up to my local apple tree and making a hole\u2026", "createdAt": 1675979220000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @NintendoUK: Wave 4 of the #MarioKart 8 Deluxe – Booster Course Pass arrives this spring. Look forward to the brand new Yoshi's Island c… sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1454142375262146563, "id": 1623800662218752007, "text": "RT @NintendoUK: Wave 4 of the #MarioKart 8 Deluxe \u2013 Booster Course Pass arrives this spring. Look forward to the brand new Yoshi's Island c\u2026", "createdAt": 1675979221000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Bryan Cranston for Kith Spring 2023 https://t.co/eho0uJTcVa sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 28990676, "id": 1623800666140426241, "text": "Bryan Cranston for Kith Spring 2023 https://t.co/eho0uJTcVa", "createdAt": 1675979222000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @kaecyne this is hilarious but i find it incredibly funny that for the kamisato rating you cant tell if its ayato or ayaka sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1464660066871783424, "id": 1623800665528053762, "text": "@kaecyne this is hilarious but i find it incredibly funny that for the kamisato rating you cant tell if its ayato or ayaka", "createdAt": 1675979222000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @goodjobcarryon @spring_nwinter OHHHHH DANKE!!!!!! sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1548409651045101568, "id": 1623800669017604097, "text": "@goodjobcarryon @spring_nwinter OHHHHH DANKE!!!!!!", "createdAt": 1675979222000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @NWSSiouxFalls: The 1st (of 3) Spring Flood Outlooks was released today and highlights the following:
+🔹Below normal flood risk over the… sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 25117648, "id": 1623800671030894599, "text": "RT @NWSSiouxFalls: The 1st (of 3) Spring Flood Outlooks was released today and highlights the following:\n🔹Below normal flood risk over the\u2026", "createdAt": 1675979223000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @cornhuskertim @kevinsjuts @1011_News He is a 24 year old kid that got hired because his dad is friends with Matt rhule. You seriously think there are not others more deserving. Atrocious hire. Look how well nepotism is for Iowa. sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1439307084391145480, "id": 1623800670234050565, "text": "@cornhuskertim @kevinsjuts @1011_News He is a 24 year old kid that got hired because his dad is friends with Matt rhule. You seriously think there are not others more deserving. Atrocious hire. Look how well nepotism is for Iowa.", "createdAt": 1675979223000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text Say goodbye to the last gust of spring breeze, let our friendship warm in my heart, you for the first beam of the scorching sun of summer, l sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1623800526335770626, "id": 1623800668027748353, "text": "Say goodbye to the last gust of spring breeze, let our friendship warm in my heart, you for the first beam of the scorching sun of summer, l", "createdAt": 1675979222000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @eprentisscm: CM16 CAST BTS PHOTOS!! 
+
+Season 17 starts filming during the spring!
+
+#CriminalMinds @criminalminds #CriminalMindsEvolutio… sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1080276681280106497, "id": 1623800673459396608, "text": "RT @eprentisscm: CM16 CAST BTS PHOTOS!! \n\nSeason 17 starts filming during the spring!\n\n#CriminalMinds @criminalminds #CriminalMindsEvolutio\u2026", "createdAt": 1675979223000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text I feel like spring after winter, and sun on the leaves; and like trumpets and harps and all the songs I have ever heard! sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1561069343403827200, "id": 1623800683475644416, "text": "I feel like spring after winter, and sun on the leaves; and like trumpets and harps and all the songs I have ever heard!", "createdAt": 1675979226000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @GerHogan: I have 3 signed copies of #TheGinSistersPromise for a #Giveaway to celebrate paperback publication day -   RT, 💜 & Follow to… sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 66366983, "id": 1623800684184231938, "text": "RT @GerHogan: I have 3 signed copies of #TheGinSistersPromise for a #Giveaway to celebrate paperback publication day -   RT, 💜 & Follow to\u2026", "createdAt": 1675979226000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text @TheAwkwardLefty @NATO @KpsZSU That's simple: The U.S. has changed its stance on F-16 supply (their authorisation was required) from any nation that seeks to help Ukraine.
+
+The Pole's already have F-16s in their fleet anyway, and as regards MiG's in @NATO - no comment. sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1509441149437685767, "id": 1623800681852272641, "text": "@TheAwkwardLefty @NATO @KpsZSU That's simple: The U.S. has changed its stance on F-16 supply (their authorisation was required) from any nation that seeks to help Ukraine.\n\nThe Pole's already have F-16s in their fleet anyway, and as regards MiG's in @NATO - no comment.", "createdAt": 1675979225000} to topic twitter-topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text I wanna go to LA for spring break 😩 sending to kafka topic
+2023-02-09 16:47:15 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 1002146547092676609, "id": 1623800684452642822, "text": "I wanna go to LA for spring break 😩", "createdAt": 1675979226000} to topic twitter-topic
+2023-02-09 16:47:17 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for adminclient-1 unregistered
+2023-02-09 16:47:17 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-02-09 16:47:17 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-02-09 16:47:17 [kafka-admin-client-thread | adminclient-1] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-02-09 16:47:17 [SpringApplicationShutdownHook] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Closing kafka producer
+2023-02-09 16:47:17 [SpringApplicationShutdownHook] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2023-02-09 16:47:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2023-02-09 16:47:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2023-02-09 16:47:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2023-02-09 16:47:18 [SpringApplicationShutdownHook] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2023-02-09 16:47:20 [main] INFO  c.m.d.t.t.k.s.l.TwitterKafkaStatusListener - Received status text RT @FeistyLibLady: Duvall Co FL pulled 176 books from schools.
+
+Roberto Clemente: Pride of the Pgh Pirates was 1 of them.
+
+Clemente a Spani… sending to kafka topic
+2023-02-09 16:47:20 [main] INFO  c.m.d.k.p.c.s.i.TwitterKafkaProducer - Sending message {"userId": 797179922087297024, "id": 1623800684658163717, "text": "RT @FeistyLibLady: Duvall Co FL pulled 176 books from schools.\n\nRoberto Clemente: Pride of the Pgh Pirates was 1 of them.\n\nClemente a Spani\u2026", "createdAt": 1675979226000} to topic twitter-topic
+2023-02-09 16:47:20 [main] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 1638400
+	bootstrap.servers = [localhost:19092, localhost:29092, localhost:39092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-2
+	compression.type = snappy
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 60000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class io.confluent.kafka.serializers.KafkaAvroSerializer
+
+2023-02-09 16:47:20 [main] INFO  i.c.k.s.KafkaAvroSerializerConfig - KafkaAvroSerializerConfig values: 
+	auto.register.schemas = true
+	avro.reflection.allow.null = false
+	avro.remove.java.properties = false
+	avro.use.logical.type.converters = false
+	basic.auth.credentials.source = URL
+	basic.auth.user.info = [hidden]
+	bearer.auth.cache.expiry.buffer.seconds = 300
+	bearer.auth.client.id = null
+	bearer.auth.client.secret = null
+	bearer.auth.credentials.source = STATIC_TOKEN
+	bearer.auth.identity.pool.id = null
+	bearer.auth.issuer.endpoint.url = null
+	bearer.auth.logical.cluster = null
+	bearer.auth.scope = null
+	bearer.auth.scope.claim.name = scope
+	bearer.auth.sub.claim.name = sub
+	bearer.auth.token = [hidden]
+	context.name.strategy = class io.confluent.kafka.serializers.context.NullContextNameStrategy
+	id.compatibility.strict = true
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	latest.compatibility.strict = true
+	max.schemas.per.subject = 1000
+	normalize.schemas = false
+	proxy.host = 
+	proxy.port = -1
+	schema.format = null
+	schema.reflection = false
+	schema.registry.basic.auth.user.info = [hidden]
+	schema.registry.ssl.cipher.suites = null
+	schema.registry.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	schema.registry.ssl.endpoint.identification.algorithm = https
+	schema.registry.ssl.engine.factory.class = null
+	schema.registry.ssl.key.password = null
+	schema.registry.ssl.keymanager.algorithm = SunX509
+	schema.registry.ssl.keystore.certificate.chain = null
+	schema.registry.ssl.keystore.key = null
+	schema.registry.ssl.keystore.location = null
+	schema.registry.ssl.keystore.password = null
+	schema.registry.ssl.keystore.type = JKS
+	schema.registry.ssl.protocol = TLSv1.3
+	schema.registry.ssl.provider = null
+	schema.registry.ssl.secure.random.implementation = null
+	schema.registry.ssl.trustmanager.algorithm = PKIX
+	schema.registry.ssl.truststore.certificates = null
+	schema.registry.ssl.truststore.location = null
+	schema.registry.ssl.truststore.password = null
+	schema.registry.ssl.truststore.type = JKS
+	schema.registry.url = [http://localhost:8081]
+	use.latest.version = false
+	use.schema.id = -1
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+
+2023-02-09 16:47:20 [main] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-2] Instantiated an idempotent producer.
+2023-02-09 16:47:20 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.1.2
+2023-02-09 16:47:20 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: f8c67dc3ae0a3265
+2023-02-09 16:47:20 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1675979240252
+2023-02-09 16:47:20 [kafka-producer-network-thread | producer-2] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=producer-2] ProducerId set to 1001 with epoch 0
+2023-02-09 16:47:20 [kafka-producer-network-thread | producer-2] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-2] Cluster ID: Yk7TurdATWyZwPkAsbF6og
