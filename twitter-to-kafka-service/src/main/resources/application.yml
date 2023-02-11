@@ -5,5 +5,10 @@ spring:
     active: dev
   config:
     import: configserver:http://localhost:8888
-    username: spring_cloud_user
-    password: springCloud_Pwd!
+  cloud:
+    config:
+      username: spring_cloud_user
+      password: '{cipher}ef913ee2931594d21759eba4a178364f46d960e3a6c8b84b63c559b36d687b3a466e547e4c01aee8e26d0a4abce2dc12'
+
+encrypt:
+  key: 'demoPassword'

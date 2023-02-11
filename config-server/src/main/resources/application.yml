@@ -9,13 +9,16 @@ spring:
 #          uri: file:///Users/frankyiu/Documents/projects/javaworkspace/microservices-demo/config-server-repository
           uri: https://github.com/frankyiu/microservices-demo-config-server.git
           username: frankyiu
-          password: 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
+#          password: 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
+          password: '{cipher}cd38b20839cc387b3db72479f32d5d9fa63afc190bf27fa9f95a977db1608ff81f5fa112e780803c60ab8b3b104253b2412ee96d8658f88f106af44a41707755'
           clone-on-start: true
     fail-fast: true
   security:
     user:
       name: spring_cloud_user
-      password: springCloud_Pwd!
+      password: '{cipher}90ca707ec213a65420e08b54f9bd30e6de7a94454adbe3710c6c2dcf7d84605bae646607a26747761b2f22dfe462902a'
+
+
 logging:
   level:
     ROOT: INFO
