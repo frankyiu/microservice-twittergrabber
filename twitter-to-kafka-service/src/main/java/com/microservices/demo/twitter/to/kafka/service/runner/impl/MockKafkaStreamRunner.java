@@ -22,7 +22,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
-@ConditionalOnExpression("not ${twitter-to-kafka-service.enable-v2-tweets} &&  ${twitter-to-kafka-service.enable-mock-tweets}")
+@ConditionalOnExpression("${twitter-to-kafka-service.enable-mock-tweets}")
 public class MockKafkaStreamRunner implements StreamRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(MockKafkaStreamRunner.class);

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: twitter_to_kafka
+    name: kafka_to_elastic
   profiles:
     active: dev
   config:

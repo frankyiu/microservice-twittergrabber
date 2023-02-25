@@ -8,10 +8,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 
 @Configuration
-public class SecurityConfig  {
+public class SecurityConfig {
 
     @Bean
-    public WebSecurityCustomizer webSecurityCustomizer(){
-        return (web)-> web.ignoring().antMatchers("/encrypt/**", "/decrypt/**");
+    public WebSecurityCustomizer webSecurityCustomizer() {
+        return (web) -> web.ignoring()
+                           .antMatchers("/encrypt/**",
+                                                    "/decrypt/**",
+                                                    "/actuator/**");
     }
 }
