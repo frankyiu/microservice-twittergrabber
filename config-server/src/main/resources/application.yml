@@ -8,7 +8,7 @@ spring:
         git:
           uri: https://github.com/frankyiu/microservices-demo-config-server.git
           username: frankyiu
-          password: '{cipher}cd38b20839cc387b3db72479f32d5d9fa63afc190bf27fa9f95a977db1608ff81f5fa112e780803c60ab8b3b104253b2412ee96d8658f88f106af44a41707755'
+          password: '{cipher}99c8edb7ec8eb9ea5ac9a5c3a184d56de101033c678e98cb440a1072043f07e152a05f6cae476dfd2742de52773856d385ae622ea435229751090bd805f52ac0'
           clone-on-start: true
     fail-fast: true
   security:

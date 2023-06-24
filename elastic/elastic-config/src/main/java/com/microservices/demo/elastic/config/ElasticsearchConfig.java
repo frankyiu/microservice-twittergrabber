@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.elasticsearch.client.ClientConfiguration;
 import org.springframework.data.elasticsearch.client.RestClients;
+import org.springframework.data.elasticsearch.client.elc.ElasticsearchConfiguration;
 import org.springframework.data.elasticsearch.client.elc.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.config.AbstractElasticsearchConfiguration;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
@@ -21,11 +22,12 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.InetSocketAddress;
 import java.util.Objects;
 
 @Configuration
 @EnableElasticsearchRepositories(basePackages = "com.microservices.demo.elastic")
-public class ElasticsearchConfig  {
+public class ElasticsearchConfig extends ElasticsearchConfiguration {
 
     private final ElasticConfigData elasticConfigData;
 
@@ -48,6 +50,17 @@ public class ElasticsearchConfig  {
 //        return new RestHighLevelClientBuilder(httpClient).setApiCompatibilityMode(true)
 //                                                         .build();
 //    }
+
+    @Override
+    public ClientConfiguration clientConfiguration() {
+        UriComponents uri = UriComponentsBuilder.fromHttpUrl(elasticConfigData.getConnectionUrl())
+                                                .build();
+        return ClientConfiguration.builder()
+                                  .connectedTo(uri.getHost() + ":" + uri.getPort())
+                                  .withConnectTimeout(elasticConfigData.getConnectTimeoutMs())
+                                  .withSocketTimeout(elasticConfigData.getSocketTimeoutMs())
+                                  .build();
+    }
 
     @Bean
     public ElasticsearchClient elasticsearchClient() {

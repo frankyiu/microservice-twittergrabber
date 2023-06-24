@@ -17,6 +17,11 @@
         <module>elastic/elastic-query-client</module>
         <module>common-util</module>
         <module>elastic-query-service</module>
+        <module>elastic-query-web-client</module>
+        <module>elastic-query-service-common</module>
+        <module>elastic-query-web-client-common</module>
+        <module>reactive-elastic-query-service</module>
+        <module>reactive-elastic-query-web-client</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -46,6 +51,7 @@
         <spring-cloud-config.version>3.1.5</spring-cloud-config.version>
         <spring-cloud-dependencies.version>2021.0.5</spring-cloud-dependencies.version>
         <elastic-search.version>7.17.9</elastic-search.version>
+        <springdoc-openapi-ui.version>1.6.14</springdoc-openapi-ui.version>
     </properties>
 
     <repositories>
@@ -111,6 +117,16 @@
             <dependency>
                 <groupId>com.microservices.demo</groupId>
                 <artifactId>elastic-query-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-query-service-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.microservices.demo</groupId>
+                <artifactId>elastic-query-web-client-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -209,6 +225,11 @@
                 <groupId>jakarta.json</groupId>
                 <artifactId>jakarta.json-api</artifactId>
                 <version>${json-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
             </dependency>
 
             <dependency>
