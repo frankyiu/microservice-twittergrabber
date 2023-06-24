@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>elastic-query-web-client</artifactId>
+    <artifactId>elastic-query-web-client-2</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -85,7 +85,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>${project.groupId}/elastic.query.web.client:${project.version}</name>
+                        <name>${project.groupId}/elastic.query.web.client.2:${project.version}</name>
                     </image>
                 </configuration>
                 <executions>

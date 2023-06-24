@@ -1,6 +1,6 @@
 spring:
   application:
-    name: elastic_query_web_client
+    name: elastic_query_web_client_2
   profiles:
     active: dev
   config:

@@ -37,30 +37,30 @@ public class ElasticQueryWebClientErrorHandler {
         return "error";
     }
 
-    @ExceptionHandler(RuntimeException.class)
-    public String handle(RuntimeException e, Model model) {
-        LOG.error("Service runtime exception", e);
-        model.addAttribute("error", HttpStatus.BAD_REQUEST.getReasonPhrase());
-        model.addAttribute("error_description", "Service runtime exception!" + e.getMessage());
-        return "error";
-    }
 
     @ExceptionHandler(Exception.class)
     public String handle(Exception e, Model model) {
         LOG.error("Internal server error", e);
-        model.addAttribute("elasticQueryWebClientRequestModel", ElasticQueryWebClientRequestModel.builder().build());
         model.addAttribute("error", HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
         model.addAttribute("error_description", "A server error occurred!");
+        return "error";
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public String handle(RuntimeException e, Model model) {
+        LOG.error("Service runtime exception", e);
+        model.addAttribute("elasticQueryWebClientRequestModel", ElasticQueryWebClientRequestModel.builder().build());
+        model.addAttribute("error", "Could not get response");
+        model.addAttribute("error_description", "Service runtime exception!" + e.getMessage());
         return "home";
     }
 
     @ExceptionHandler(BindException.class)
-    public String handle(MethodArgumentNotValidException e, Model model) {
-        LOG.error("Method Argument Not Valid Error", e);
+    public String handle(BindException e, Model model) {
+        LOG.error("Method argument validation exception!", e);
         Map<String, String> errors = new HashMap<>();
-        e.getBindingResult()
-         .getAllErrors()
-         .forEach(err -> errors.put(((FieldError) err).getField(), err.getDefaultMessage()));
+        e.getBindingResult().getAllErrors().forEach(error ->
+                errors.put(((FieldError) error).getField(), error.getDefaultMessage()));
         model.addAttribute("elasticQueryWebClientRequestModel", ElasticQueryWebClientRequestModel.builder().build());
         model.addAttribute("error", HttpStatus.BAD_REQUEST.getReasonPhrase());
         model.addAttribute("error_description", errors);
