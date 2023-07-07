@@ -219,6 +219,7 @@ public class TwitterV2StreamHelper {
     }
 
     private String getFormattedTweet(String data) {
+        LOG.info("data {}", data);
         JSONObject jsonData = (JSONObject)new JSONObject(data).get("data");
 
         String[] params = new String[]{

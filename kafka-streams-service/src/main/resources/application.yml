@@ -1,6 +1,6 @@
 spring:
   application:
-    name: twitter_to_kafka
+    name: kafka_streams_service
   profiles:
     active: dev
   config:
@@ -9,8 +9,4 @@ spring:
     config:
       username: spring_cloud_user
       password: '{cipher}ef913ee2931594d21759eba4a178364f46d960e3a6c8b84b63c559b36d687b3a466e547e4c01aee8e26d0a4abce2dc12'
-      uri: http://localhost:8888
 
-#twitter-to-kafka-service:
-#  enable-v2-tweets: true
-#  enable-mock-tweets: false
